@@ -1,0 +1,16 @@
+--- Hypothesis Test Report for Car Evaluation ---
+Date: 2025-09-20 19:35:28
+--------------------------------------------------
+Test: Paired t-test
+Null Hypothesis (H0): The mean accuracy of the From-Scratch KNN and Scikit-Learn KNN is the same.
+Alternative Hypothesis (H1): The mean accuracy of the two models is different.
+Significance Level (alpha): 0.05
+--------------------------------------------------
+
+Results:
+T-statistic: 2.0247
+P-value: 0.0736
+
+Conclusion:
+Since the p-value (0.0736) is greater than or equal to alpha (0.05), we FAIL TO REJECT the null hypothesis.
+There is no statistically significant difference in performance between the two implementations.

@@ -1,0 +1,144 @@
+/knn_scratch
+    knn_weighted.py
+        def get_neighbors:
+
+            Finds the k most similar neighbors to a new piece of data (test_row)
+            from a training dataset and returns them with their distances.
+
+            Args:
+                train_dataset (list of lists): The training data.
+                test_row (list): A single row of data to find neighbors.
+                k (int): The number of neighbors to find.
+                distance_metric (function): The function to use for distance calculation.
+
+            Returns:
+                list: A list of the k nearest neighbors as (neighbor_row, distance) tuples.
+
+        def predict_classification:
+
+            Makes a class prediction for a new piece of data (test_row) using a
+            weighted KNN algorithm. Closer neighbors have a greater influence on the vote.
+
+            Args:
+                train_dataset (list of lists): The training data.
+                test_row (list): A single row of data to classify.
+                k (int): The number of neighbors to use for voting.
+                distance_metric (function): The function to use for distance calculation.
+
+            Returns:
+                The predicted class label.
+
+    distance_metrics.py
+        def euclidean_distance:
+
+            Calculates the Euclidean distance between two data points.
+
+            Formula: sqrt(sum for i to N of (row1[i] - row2[i])^2)
+
+            Args:
+                row1 (list): The first data point (vector).
+                row2 (list): The second data point (vector).
+
+            Returns:
+                float: The calculated Euclidean distance.
+
+        def manhattan_distance:
+
+            Calculates the Manhattan distance between two data points.
+
+            Formula: sum for i to N of |row1[i] - row2[i]|
+
+            Args:
+                row1 (list): The first data point (vector).
+                row2 (list): The second data point (vector).
+
+            Returns:
+                float: The calculated Manhattan distance.
+
+        def hamming_distance:
+
+            Calculates the Hamming distance between two data points.
+
+            Args:
+                row1 (list): The first data point (vector).
+                row2 (list): The second data point (vector).
+
+            Returns:
+                int: The calculated Hamming distance.
+
+    cross_validation.py
+        def cross_validation_split:
+
+            Splits a dataset into k folds for cross-validation, ensuring all data is used.
+
+            This implementation first shuffles the dataset to remove any ordering bias.
+            It then calculates the size of each fold and distributes any remainder
+            items one by one to the first few folds.
+
+            Args:
+                dataset (list): The dataset to be split.
+                k_folds (int): The number of folds to create.
+
+            Returns:
+                list: A list of folds, where each fold is a subset of the dataset.
+
+        def accuracy_metric:
+
+            Calculates the accuracy percentage between two lists of labels.
+
+            Args:
+                actual (list): A list of true class labels.
+                predicted (list): A list of predicted class labels.
+
+            Returns:
+                float: The accuracy as a percentage.
+
+        def evaluate_algorithm:
+
+            Evaluates a classification algorithm using k-fold cross-validation.
+
+            Args:
+                dataset (list): The dataset for evaluation.
+                algorithm (function): The classification function to evaluate (our KNN predictor).
+                k_folds (int): The number of folds to use (e.g., 10).
+                k (int): The number of neighbors for the KNN algorithm.
+                distance_metric (function): The distance function for KNN.
+                *args: Any other arguments required by the algorithm.
+
+            Returns:
+                list: A list of accuracy scores for each fold.
+
+/knn_implement
+    dataset_preprocessor.py
+        def preprocess_car_evaluation:
+            Preprocesses the Car Evaluation dataset using Ordinal Encoding.
+
+        def preprocess_breast_cancer:
+            Preprocesses the categorical Breast Cancer dataset using One-Hot Encoding.
+
+    knn_controller.py
+        def run_experiment:
+
+            Conducts a full KNN experiment for a given dataset configuration.
+
+            This function performs the following steps:
+            1. Loads the preprocessed data.
+            2. Splits the data into 10 folds using our from-scratch implementation.
+            3. Runs 10-fold CV for our from-scratch KNN implementation.
+            4. Runs 10-fold CV for the Scikit-Learn KNN implementation on the same folds.
+            5. Performs a paired t-test on the accuracy scores.
+            6. Generates and saves a detailed comparison report.
+            7. Generates and saves a hypothesis test report.
+
+            Args:
+                config (dict): The configuration dictionary for the dataset.
+                test_type (str): The type of hypothesis test to run (currently supports 't-test').
+
+knn_runner.py
+    def main:
+        Main function to parse command-line arguments and run the specified tasks.
+
+
+
+
+

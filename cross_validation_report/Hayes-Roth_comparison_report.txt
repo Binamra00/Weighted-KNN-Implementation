@@ -1,0 +1,26 @@
+--- KNN Comparison Report for Hayes-Roth ---
+Date: 2025-09-20 19:33:50
+--------------------------------------------------
+Parameters: k=5, Distance Metric='hamming_distance'
+--------------------------------------------------
+
+Fold-by-Fold Accuracy (%):
+Fold | From-Scratch KNN | Scikit-Learn KNN
+-----|------------------|-----------------
+1    | 37.50            | 50.00
+2    | 62.50            | 56.25
+3    | 56.25            | 50.00
+4    | 43.75            | 18.75
+5    | 56.25            | 37.50
+6    | 62.50            | 62.50
+7    | 75.00            | 68.75
+8    | 75.00            | 62.50
+9    | 50.00            | 62.50
+10   | 56.25            | 50.00
+
+--------------------------------------------------
+Summary Statistics:
+Mean Accuracy (From-Scratch): 57.50%
+Mean Accuracy (Scikit-Learn): 51.88%
+Std Dev (From-Scratch):   11.46
+Std Dev (Scikit-Learn):   13.99

@@ -1,0 +1,26 @@
+--- KNN Comparison Report for Car Evaluation ---
+Date: 2025-09-20 19:35:28
+--------------------------------------------------
+Parameters: k=5, Distance Metric='manhattan_distance'
+--------------------------------------------------
+
+Fold-by-Fold Accuracy (%):
+Fold | From-Scratch KNN | Scikit-Learn KNN
+-----|------------------|-----------------
+1    | 91.33            | 91.33
+2    | 97.11            | 91.91
+3    | 94.22            | 94.22
+4    | 97.11            | 95.38
+5    | 97.11            | 96.53
+6    | 94.22            | 95.38
+7    | 93.64            | 93.64
+8    | 94.22            | 93.06
+9    | 93.60            | 92.44
+10   | 98.26            | 95.35
+
+--------------------------------------------------
+Summary Statistics:
+Mean Accuracy (From-Scratch): 95.08%
+Mean Accuracy (Scikit-Learn): 93.92%
+Std Dev (From-Scratch):   2.07
+Std Dev (Scikit-Learn):   1.64

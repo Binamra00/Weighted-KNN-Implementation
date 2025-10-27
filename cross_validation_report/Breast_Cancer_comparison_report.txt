@@ -1,0 +1,26 @@
+--- KNN Comparison Report for Breast Cancer ---
+Date: 2025-09-20 19:36:09
+--------------------------------------------------
+Parameters: k=5, Distance Metric='euclidean_distance'
+--------------------------------------------------
+
+Fold-by-Fold Accuracy (%):
+Fold | From-Scratch KNN | Scikit-Learn KNN
+-----|------------------|-----------------
+1    | 51.72            | 65.52
+2    | 75.86            | 75.86
+3    | 75.86            | 72.41
+4    | 65.52            | 72.41
+5    | 75.86            | 72.41
+6    | 55.17            | 62.07
+7    | 82.14            | 82.14
+8    | 78.57            | 78.57
+9    | 78.57            | 75.00
+10   | 75.00            | 75.00
+
+--------------------------------------------------
+Summary Statistics:
+Mean Accuracy (From-Scratch): 71.43%
+Mean Accuracy (Scikit-Learn): 73.14%
+Std Dev (From-Scratch):   9.88
+Std Dev (Scikit-Learn):   5.54
