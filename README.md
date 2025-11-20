@@ -1,4 +1,4 @@
-#**README: Scratch KNN Implementation and Evaluation**
+# **README: Scratch KNN Implementation and Evaluation**
 
 -----------------
 1. DESCRIPTION
